@@ -2,4 +2,6 @@
     <string name="app_name">Magazie</string>
     <string name="titlu">Magazie Smart</string>
     <string name="login_button">Conectează-te</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">Parolă</string>
 </resources>
