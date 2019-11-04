@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1065591810241",
+    "firebase_url": "https://magazie-smart.firebaseio.com",
+    "project_id": "magazie-smart",
+    "storage_bucket": "magazie-smart.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065591810241:android:1abbcfc49ef5ad630f0c40",
+        "android_client_info": {
+          "package_name": "com.example.magazie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065591810241-2sj2aag6unn32fqoc97trfhml04lev9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_K59XDburmQE7r4x9er-SdkCpWgx577M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1065591810241-2sj2aag6unn32fqoc97trfhml04lev9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

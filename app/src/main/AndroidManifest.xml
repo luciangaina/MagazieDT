@@ -12,8 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Scanner"
-            android:exported="true"></activity> //testing scanner activity
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".Scanner"
+            android:exported="true" /> <!-- testing scanner activity -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,9 +28,9 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-        <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES"
-            android:value="barcode" /> //for barcode scanner
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
     </application>
 
 </manifest>

@@ -40,7 +40,7 @@ public class Scanner extends AppCompatActivity {
                 .setBarcodeFormats(Barcode.QR_CODE).build();
 
         cameraSource = new CameraSource.Builder(this, barcodeDetector)
-                .setRequestedPreviewSize(640,480).build();
+                .setRequestedPreviewSize(720,540).build();
 
         surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
