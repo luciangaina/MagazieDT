@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Objects;
+
 public class LoginActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
@@ -60,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                                     startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
                                 }
                                 else{
-                                    Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(LoginActivity.this, Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_LONG).show();
                                 }
                             }
                         });

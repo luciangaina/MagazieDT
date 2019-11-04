@@ -30,7 +30,9 @@ public class ProfileActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
-        user.setText(firebaseUser.getEmail());
+        if (firebaseUser != null) {
+            user.setText(firebaseUser.getEmail());
+        }
 
         userLogout.setOnClickListener(new View.OnClickListener() {
             @Override
