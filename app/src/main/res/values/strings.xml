@@ -5,4 +5,5 @@
     <string name="e_mail">E-mail</string>
     <string name="password">Parolă</string>
     <string name="scanner_text">Scanați codul QR</string>
+    <string name="logout">Deconcetare</string>
 </resources>

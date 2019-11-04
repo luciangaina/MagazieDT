@@ -19,11 +19,14 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
-    ProgressBar progressBar;
-    EditText userEmail;
-    EditText userPassword;
-    Button userLogin;
+    private Toolbar toolbar;
+    private ProgressBar progressBar;
+    private EditText userEmail;
+    private EditText userPassword;
+    private Button userLogin;
+
+    private String email;
+    private String password;
 
     FirebaseAuth firebaseAuth;
 
@@ -45,10 +48,14 @@ public class LoginActivity extends AppCompatActivity {
         userLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                firebaseAuth.signInWithEmailAndPassword(userEmail.getText().toString(), userPassword.getText().toString())
+                progressBar.setVisibility(View.VISIBLE);
+                email = userEmail.getText().toString();
+                password = userPassword.getText().toString();
+                firebaseAuth.signInWithEmailAndPassword(email,password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
+                                progressBar.setVisibility(View.GONE);
                                 if(task.isSuccessful()) {
                                     startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
                                 }
