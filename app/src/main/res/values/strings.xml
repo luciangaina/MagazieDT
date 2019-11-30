@@ -6,4 +6,5 @@
     <string name="password">Parolă</string>
     <string name="scanner_text">Scanați codul QR</string>
     <string name="logout">Deconcetare</string>
+    <string name="signup_button">Creare utilizator</string>
 </resources>

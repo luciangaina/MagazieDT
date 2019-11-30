@@ -30,14 +30,14 @@ public class LoginActivity extends AppCompatActivity {
     private String email;
     private String password;
 
-    FirebaseAuth firebaseAuth;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbarLogin);
         progressBar = findViewById(R.id.progressBar);
         userEmail = findViewById(R.id.userEmail);
         userPassword = findViewById(R.id.userPassword);
