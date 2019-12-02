@@ -45,4 +45,8 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void onInchiriazaClicked(View view) {
+        startActivity(new Intent(ProfileActivity.this,InchiriazaCostum.class));
+    }
 }
