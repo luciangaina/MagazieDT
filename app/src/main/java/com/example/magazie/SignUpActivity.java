@@ -32,12 +32,15 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText telefon;
     private EditText nr_costum;
     private Button signup;
+    private CheckBox checkBox;
+    private RadioButton radioButton_barbat;
+    private RadioButton radioButton_femeie;
 
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private String gen;
-    private Boolean isAdmin;
+    private String isAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,9 @@ public class SignUpActivity extends AppCompatActivity {
         telefon = findViewById(R.id.etTelefon);
         nr_costum = findViewById(R.id.etCostum);
         signup = findViewById(R.id.buttonSignup);
+        checkBox = findViewById(R.id.checkBox);
+        radioButton_barbat = findViewById(R.id.barbat);
+        radioButton_femeie = findViewById(R.id.femeie);
 
         toolbar.setTitle("Creare Utilizator");
 
@@ -90,8 +96,14 @@ public class SignUpActivity extends AppCompatActivity {
                                             }
                                         }
                                     });
+                            nume.setText("");
                             email.setText("");
                             password.setText("");
+                            telefon.setText("");
+                            nr_costum.setText("");
+                            radioButton_barbat.setChecked(false);
+                            radioButton_femeie.setChecked(false);
+                            checkBox.setChecked(false);
                         } else {
                             Toast.makeText(SignUpActivity.this, Objects.requireNonNull(task.getException()).getMessage(),Toast.LENGTH_LONG).show();
                         }
@@ -122,9 +134,9 @@ public class SignUpActivity extends AppCompatActivity {
         switch (view.getId()){
             case R.id.checkBox:
                 if(checked)
-                    isAdmin = true;
+                    isAdmin = "true";
                 else
-                    isAdmin = false;
+                    isAdmin = "false";
                 break;
         }
     }
