@@ -40,7 +40,7 @@ public class SignUpActivity extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private String gen;
-    private String isAdmin;
+    private String isAdmin = "false";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

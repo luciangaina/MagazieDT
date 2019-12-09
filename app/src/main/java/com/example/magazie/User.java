@@ -20,4 +20,12 @@ public class User {
         this.gen = gen;
         this.admin = admin;
     }
+
+    public String getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(String admin) {
+        this.admin = admin;
+    }
 }
