@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,6 +23,7 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView user;
     private Button userLogout;
     private TextView numarCostum;
+    private Toolbar toolbar;
 
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
@@ -36,6 +38,9 @@ public class ProfileActivity extends AppCompatActivity {
         user = findViewById(R.id.tvUser);
         userLogout = findViewById(R.id.buttonLogout);
         numarCostum = findViewById(R.id.tvNrCostum);
+        toolbar = findViewById(R.id.toolbarProfile);
+
+        toolbar.setTitle("Profil dansator");
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -82,5 +87,11 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void onPasswordChangeClicked(View view) {
         startActivity(new Intent(ProfileActivity.this, ChangePassword.class));
+    }
+
+    public void onPredareCostumClicked(View view) {
+    }
+
+    public void onShowInventarClicked(View view) {
     }
 }
