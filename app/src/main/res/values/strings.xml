@@ -22,4 +22,5 @@
     <string name="inventar">Vizualizează inventarul personal</string>
     <string name="inchiriaza_costume">Inchiriaza costume</string>
     <string name="predare_costume">Predă costume</string>
+    <string name="cod">Cod:</string>
 </resources>

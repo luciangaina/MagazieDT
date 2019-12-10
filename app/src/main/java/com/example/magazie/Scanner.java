@@ -86,6 +86,8 @@ public class Scanner extends AppCompatActivity {
                             vibrator.vibrate(1000);
                             textView.setText(qrCodes.valueAt(0).displayValue);
                             finish(); //? - mai modificam
+                            String code = qrCodes.valueAt(0).toString();
+
                         }
                     });
                 }
