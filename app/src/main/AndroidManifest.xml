@@ -12,14 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminActivity"></activity>
+        <activity android:name=".ChangePassword"></activity>
+        <activity android:name=".AdminActivity" />
         <activity android:name=".InchiriazaCostum" />
         <activity
             android:name=".SignUpActivity"
             android:exported="true" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".LoginActivity"
-            android:exported="true"/>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
         <activity
             android:name=".Scanner"
             android:exported="true" /> <!-- testing scanner activity -->

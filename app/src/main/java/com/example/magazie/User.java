@@ -28,4 +28,20 @@ public class User {
     public void setAdmin(String admin) {
         this.admin = admin;
     }
+
+    public String getNr_costum() {
+        return nr_costum;
+    }
+
+    public void setNr_costum(String nr_costum) {
+        this.nr_costum = nr_costum;
+    }
+
+    public String getNume() {
+        return nume;
+    }
+
+    public void setNume(String nume) {
+        this.nume = nume;
+    }
 }
