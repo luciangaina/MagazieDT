@@ -2,6 +2,7 @@ package com.example.magazie;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -64,10 +65,15 @@ public class Scanner extends AppCompatActivity {
                         public void run() {
                             Vibrator vibrator = (Vibrator)getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                             vibrator.vibrate(1000);
-                            textView.setText(qrCodes.valueAt(0).displayValue);
-                            finish(); //? - mai modificam
-                            String code = qrCodes.valueAt(0).toString();
+                            //textView.setText(qrCodes.valueAt(0).displayValue);
 
+                            String code = qrCodes.valueAt(0).rawValue;
+
+                            Intent resultIntent = new Intent();
+                            resultIntent.putExtra("resultCode", code);
+                            setResult(RESULT_OK, resultIntent);
+                            
+                            finish();
                         }
                     });
                 }
