@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/tvUser"
-        android:layout_width="7dp"
-        android:layout_height="31dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginTop="40dp"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +79,7 @@
         android:id="@+id/bttnInventar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="100dp"
         android:onClick="onShowInventarClicked"
         android:text="@string/inventar"
         app:layout_constraintEnd_toEndOf="parent"
