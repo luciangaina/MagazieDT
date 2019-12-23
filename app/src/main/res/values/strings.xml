@@ -4,4 +4,23 @@
     <string name="login_button">Conectează-te</string>
     <string name="e_mail">E-mail</string>
     <string name="password">Parolă</string>
+    <string name="scanner_text">Scanați codul QR</string>
+    <string name="logout">Deconcetare</string>
+    <string name="signup_button">Creare utilizator</string>
+    <string name="nume_prenume">Nume și prenume</string>
+    <string name="telefon">Telefon</string>
+    <string name="nr_costum">Număr costum</string>
+    <string name="barbat">Barbat</string>
+    <string name="femeie">Femeie</string>
+    <string name="administrator">Administrator</string>
+    <string name="final_activity">Finalizează activitatea</string>
+    <string name="scan">Scanează costum</string>
+    <string name="costum">Număr costum:</string>
+    <string name="parola_noua">Parolă nouă</string>
+    <string name="confirma_parola">Confirmă noua parolă</string>
+    <string name="schimba_parola">Schimba parola</string>
+    <string name="inventar">Vizualizează inventarul personal</string>
+    <string name="inchiriaza_costume">Inchiriaza costume</string>
+    <string name="predare_costume">Predă costume</string>
+    <string name="cod">Cod:</string>
 </resources>
