@@ -23,4 +23,8 @@
     <string name="inchiriaza_costume">Inchiriaza costume</string>
     <string name="predare_costume">Predă costume</string>
     <string name="cod">Cod:</string>
+    <string name="new_user">Crează utilizator nou</string>
+    <string name="costume_magazie">Costume în magazie</string>
+    <string name="inchiriate">Costume închiriate</string>
+    <string name="generate_cod">Generează cod</string>
 </resources>
