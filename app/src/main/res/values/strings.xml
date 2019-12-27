@@ -27,4 +27,5 @@
     <string name="costume_magazie">Costume în magazie</string>
     <string name="inchiriate">Costume închiriate</string>
     <string name="generate_cod">Generează cod</string>
+    <string name="adauga_costum">+ Adaugă costum</string>
 </resources>

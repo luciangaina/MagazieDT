@@ -4,15 +4,14 @@ public class User {
     public String nume;
     public String email;
     public String telefon;
-    public String nr_costum;
+    public int nr_costum;
     public String gen;
     public String admin;
 
     public User() {
-
     }
 
-    public User(String nume, String email, String telefon, String nr_costum, String gen, String admin) {
+    public User(String nume, String email, String telefon, int nr_costum, String gen, String admin) {
         this.nume = nume;
         this.email = email;
         this.telefon = telefon;
@@ -29,11 +28,11 @@ public class User {
         this.admin = admin;
     }
 
-    public String getNr_costum() {
+    public int getNr_costum() {
         return nr_costum;
     }
 
-    public void setNr_costum(String nr_costum) {
+    public void setNr_costum(int nr_costum) {
         this.nr_costum = nr_costum;
     }
 

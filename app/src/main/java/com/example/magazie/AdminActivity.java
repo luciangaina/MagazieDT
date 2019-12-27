@@ -35,4 +35,7 @@ public class AdminActivity extends AppCompatActivity {
     public void onCreateUser(View view) {
         startActivity(new Intent(AdminActivity.this, SignUpActivity.class));
     }
+
+    public void onShowMagazie(View view) {
+    }
 }

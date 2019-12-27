@@ -31,6 +31,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText nume;
     private EditText telefon;
     private EditText nr_costum;
+    private int numar_costum_int;
     private Button signup;
     private CheckBox checkBox;
     private RadioButton radioButton_barbat;
@@ -66,6 +67,8 @@ public class SignUpActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
 
+        numar_costum_int = Integer.parseInt(nr_costum.getText().toString());
+
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,7 +83,7 @@ public class SignUpActivity extends AppCompatActivity {
                                     nume.getText().toString(),
                                     email.getText().toString(),
                                     telefon.getText().toString(),
-                                    nr_costum.getText().toString(),
+                                    numar_costum_int,
                                     gen,
                                     isAdmin);
 
