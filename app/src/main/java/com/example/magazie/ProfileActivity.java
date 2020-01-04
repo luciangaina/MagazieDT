@@ -58,8 +58,8 @@ public class ProfileActivity extends AppCompatActivity {
                     String nume = userInfo.getNume();
                     user.setText(nume);
 
-                    String nrCostum = userInfo.getNr_costum();
-                    numarCostum.setText(nrCostum);
+                    int nrCostum = userInfo.getNr_costum();
+                    numarCostum.setText(String.valueOf(nrCostum));
                 }
 
                 @Override

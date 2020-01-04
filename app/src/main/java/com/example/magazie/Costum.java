@@ -18,23 +18,11 @@ public class Costum {
         return nume;
     }
 
-    public void setNume(String nume) {
-        this.nume = nume;
-    }
-
     public int getNumar() {
         return numar;
     }
 
-    public void setNumar(int numar) {
-        this.numar = numar;
-    }
-
     public String getGen() {
         return gen;
-    }
-
-    public void setGen(String gen) {
-        this.gen = gen;
     }
 }
