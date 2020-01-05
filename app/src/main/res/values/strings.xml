@@ -30,4 +30,5 @@
     <string name="adauga_costum">+ Adaugă costum</string>
     <string name="gender_text">Gen:</string>
     <string name="numar">Număr</string>
+    <string name="data">Data:</string>
 </resources>
