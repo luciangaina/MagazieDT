@@ -49,6 +49,8 @@ public class Magazie extends AppCompatActivity {
         adapter_magazie = new MyCustomListAdapter_Inchiriaza(this, R.layout.inchiriaza_list_item, costumList);
         listView.setAdapter(adapter_magazie);
 
+        searchText = findViewById(R.id.editTextSearch);
+
         vizualizareMagazie();
     }
 

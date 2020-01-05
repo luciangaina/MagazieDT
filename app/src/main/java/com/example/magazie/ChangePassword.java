@@ -50,18 +50,23 @@ public class ChangePassword extends AppCompatActivity {
     }
 
     public void onChangePasswordClicked(View view) {
-        if(checkPassword()) {
-            firebaseUser.updatePassword(newPassword).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if(task.isSuccessful()) {
-                        Toast.makeText(ChangePassword.this, "Praolă schimbată", Toast.LENGTH_LONG).show();
-                        finish();
-                    }
-                    else
-                        Toast.makeText(ChangePassword.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(checkPassword()) {
+                    firebaseUser.updatePassword(newPassword).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()) {
+                                Toast.makeText(ChangePassword.this, "Praolă schimbată", Toast.LENGTH_LONG).show();
+                                finish();
+                            }
+                            else
+                                Toast.makeText(ChangePassword.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
                 }
-            });
-        }
+            }
+        });
     }
 }

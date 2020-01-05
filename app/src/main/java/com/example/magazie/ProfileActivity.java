@@ -82,32 +82,18 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void onInchiriazaClicked(View view) {
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ProfileActivity.this, InchiriazaCostum.class));
-            }
-        });
+        startActivity(new Intent(ProfileActivity.this, InchiriazaCostum.class));
     }
 
     public void onPasswordChangeClicked(View view) {
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ProfileActivity.this, ChangePassword.class));
-            }
-        });
+        startActivity(new Intent(ProfileActivity.this, ChangePassword.class));
     }
 
     public void onPredareCostumClicked(View view) {
+        startActivity(new Intent(ProfileActivity.this, PredareCostum.class));
     }
 
     public void onShowInventarClicked(View view) {
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ProfileActivity.this, InventarPersonal.class));
-            }
-        });
+        startActivity(new Intent(ProfileActivity.this, InventarPersonal.class));
     }
 }

@@ -33,4 +33,6 @@
     <string name="data">Data:</string>
     <string name="cauta_costum">Caută costum</string>
     <string name="utilizator">Utilizator:</string>
+    <string name="inventar_personal">Inventar personal:</string>
+    <string name="cod_validare">Cod validare</string>
 </resources>

@@ -148,16 +148,11 @@ public class InchiriazaCostum extends AppCompatActivity {
     }
 
     public void onFinishClicked(View view) {
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatabaseReference pathMagazie = databaseReference.child("Magazie");
-                for (String idCostum : codes) {
-                    pathMagazie.child(idCostum).removeValue();
-                }
-                finish();
-            }
-        });
+        DatabaseReference pathMagazie = databaseReference.child("Magazie");
+        for (String idCostum : codes) {
+            pathMagazie.child(idCostum).removeValue();
+        }
+        finish();
     }
 
     public static String getCurrentTimeDate() {

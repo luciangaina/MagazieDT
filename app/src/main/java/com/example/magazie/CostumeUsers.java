@@ -9,8 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +26,6 @@ public class CostumeUsers extends AppCompatActivity {
     private ListView listView;
     private MyCustomListAdapter_CostumeUser adapter_costumeUser;
 
-    private FirebaseUser firebaseUser;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
 
@@ -37,7 +34,6 @@ public class CostumeUsers extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_costume_users);
 
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
 
@@ -62,15 +58,15 @@ public class CostumeUsers extends AppCompatActivity {
                 for(DataSnapshot ds : dataSnapshot.getChildren()) {
                     try {
                             final String userId = ds.getKey();
-                            final String userName = ds.getValue(User.class).getNume();
+                            final String userName = ds.getValue(User.class).getNume(); //get userId and userName from darabase
 
                             pathCostume.addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     for(DataSnapshot users : dataSnapshot.getChildren()) {
                                         try {
-                                                if(userId.equals(users.getKey())) {
-                                                    for (DataSnapshot costum : users.getChildren()) {
+                                                if(userId.equals(users.getKey())) { //daca gasim userId in database (in nodul/tablea "CostumeInchiriate")
+                                                    for (DataSnapshot costum : users.getChildren()) { //afisam toate costumele pe care le-a inchiriat acel user
                                                         try {
                                                                 CostumInchiriat costumInchiriat = costum.getValue(CostumInchiriat.class);
 
