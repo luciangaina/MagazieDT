@@ -1,6 +1,8 @@
 package com.example.magazie;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -81,5 +83,15 @@ public class Magazie extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void onAdaugaCostum(View view) {
+        startActivity(new Intent(Magazie.this,AdaugaCostum.class));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter_magazie.notifyDataSetChanged();
     }
 }

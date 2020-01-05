@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PredareCostum"></activity>
+        <activity android:name=".AdaugaCostum"></activity>
+        <activity android:name=".PredareCostum" />
         <activity android:name=".CostumeUsers" />
         <activity android:name=".InventarPersonal" />
         <activity android:name=".Magazie" />

@@ -9,7 +9,6 @@
     <string name="signup_button">Creare utilizator</string>
     <string name="nume_prenume">Nume și prenume</string>
     <string name="telefon">Telefon</string>
-    <string name="nr_costum">Număr costum</string>
     <string name="barbat">Barbat</string>
     <string name="femeie">Femeie</string>
     <string name="administrator">Administrator</string>
@@ -35,4 +34,8 @@
     <string name="utilizator">Utilizator:</string>
     <string name="inventar_personal">Inventar personal:</string>
     <string name="cod_validare">Cod validare</string>
+    <string name="id_costum">Id costum</string>
+    <string name="nume_costum">Nume costum</string>
+    <string name="nr_costum">Număr costum</string>
+    <string name="gen">Gen</string>
 </resources>
