@@ -54,4 +54,13 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void onCostumeInchiriate(View view) {
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdminActivity.this, CostumeUsers.class));
+            }
+        });
+    }
 }

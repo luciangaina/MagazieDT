@@ -34,7 +34,7 @@
         android:importantForAutofill="no" />
 
     <ListView
-        android:id="@+id/listViewMagazie"
+        android:id="@+id/listViewCostumeUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
