@@ -26,7 +26,6 @@ public class InventarPersonal extends AppCompatActivity {
     private ListView listView;
     private MyCustomListAdapter_Inventar adapter_inventar;
 
-    private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -36,7 +35,6 @@ public class InventarPersonal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventar_personal);
 
-        firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();

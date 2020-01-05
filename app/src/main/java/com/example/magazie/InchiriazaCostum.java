@@ -31,7 +31,6 @@ public class InchiriazaCostum extends AppCompatActivity {
     private ListView listView;
     private MyCustomListAdapter_Inchiriaza adapter_inchiriaza;
 
-    private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -43,7 +42,6 @@ public class InchiriazaCostum extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inchiriaza_costum);
 
-        firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();

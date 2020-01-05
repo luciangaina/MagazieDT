@@ -5,30 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".Magazie">
-
+    tools:context=".CostumeUsers">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarMagazie"
+        android:id="@+id/toolbarCostumeUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonAdaugaCostum"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/etSearchCostumeUser"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="@string/adauga_costum"
+        android:layout_marginTop="45dp"
+        android:ems="10"
+        android:hint="@string/cauta_costum"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarMagazie" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarCostumeUser"
+        android:importantForAutofill="no" />
 
     <ListView
         android:id="@+id/listViewMagazie"
@@ -38,18 +41,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
+        app:layout_constraintTop_toBottomOf="@+id/etSearchCostumeUser" />
 
-    <EditText
-        android:id="@+id/editTextSearch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:ems="10"
-        android:hint="@string/cauta_costum"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAdaugaCostum" />
 </androidx.constraintlayout.widget.ConstraintLayout>
