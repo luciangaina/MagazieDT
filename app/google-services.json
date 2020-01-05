@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "1065591810241",
-    "firebase_url": "https://magazie-smart.firebaseio.com",
-    "project_id": "magazie-smart",
-    "storage_bucket": "magazie-smart.appspot.com"
+    "project_number": "310004325635",
+    "firebase_url": "https://magazie-dt.firebaseio.com",
+    "project_id": "magazie-dt",
+    "storage_bucket": "magazie-dt.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1065591810241:android:1abbcfc49ef5ad630f0c40",
+        "mobilesdk_app_id": "1:310004325635:android:171765ef9b79c1e57add36",
         "android_client_info": {
           "package_name": "com.example.magazie"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1065591810241-ptbfk706anhtim1mrshbdo8kk8d68r66.apps.googleusercontent.com",
+          "client_id": "310004325635-fcp9rjn5hu0ogc68f5vc65bhjqn539vp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.magazie",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "1065591810241-2sj2aag6unn32fqoc97trfhml04lev9a.apps.googleusercontent.com",
+          "client_id": "310004325635-cb8hppuq7vjbcchvtjs1dbc27d27bjbf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB_K59XDburmQE7r4x9er-SdkCpWgx577M"
+          "current_key": "AIzaSyCq4fsCH0tAb_m5DCKsU90YUqtSHQgaBYU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1065591810241-2sj2aag6unn32fqoc97trfhml04lev9a.apps.googleusercontent.com",
+              "client_id": "310004325635-cb8hppuq7vjbcchvtjs1dbc27d27bjbf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

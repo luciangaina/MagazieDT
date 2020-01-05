@@ -67,8 +67,6 @@ public class SignUpActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
 
-        numar_costum_int = Integer.parseInt(nr_costum.getText().toString());
-
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +77,7 @@ public class SignUpActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressBar.setVisibility(View.GONE);
                         if(task.isSuccessful()){
+                            numar_costum_int = Integer.parseInt(nr_costum.getText().toString());
                             User user = new User(
                                     nume.getText().toString(),
                                     email.getText().toString(),

@@ -25,4 +25,6 @@ public class Costum {
     public String getGen() {
         return gen;
     }
+
+
 }
