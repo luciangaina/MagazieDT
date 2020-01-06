@@ -1,6 +1,12 @@
 package com.example.magazie;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -23,8 +29,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PredareCostum extends AppCompatActivity {
+public class PredareCostum extends AppCompatActivity implements LocationListener {
 
+    private static final int MY_LOCATION_PERMISSION = 1;
     private Toolbar toolbar;
     private EditText editTextCod;
     private ListView listView;
@@ -35,6 +42,10 @@ public class PredareCostum extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private ArrayList<String> codes = new ArrayList<>();
+
+    private LocationManager locationManager;
+    private Location location;
+    private double longitude, latitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +66,59 @@ public class PredareCostum extends AppCompatActivity {
         adapter_inventar = new MyCustomListAdapter_Inventar(this, R.layout.inventar_list_item, costumInchiriatList);
         listView.setAdapter(adapter_inventar);
 
+        //checkLocationPermission();
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TO_DO: Consider calling
+            //    Activity#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for Activity#requestPermissions for more details.
+            return;
+        }
+        location = locationManager.getLastKnownLocation(locationManager.NETWORK_PROVIDER);
+        onLocationChanged(location);
         afisareInventar();
     }
+
+    /*
+    private void checkLocationPermission() {
+        if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TO_DO: Consider calling
+            //    Activity#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for Activity#requestPermissions for more details.
+            ActivityCompat.requestPermissions(PredareCostum.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, MY_LOCATION_PERMISSION);
+        }
+        else {
+            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            location = locationManager.getLastKnownLocation(locationManager.NETWORK_PROVIDER);
+        }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case MY_LOCATION_PERMISSION: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                    //location = locationManager.getLastKnownLocation(locationManager.NETWORK_PROVIDER);
+                } else {
+                    Toast.makeText(PredareCostum.this, "Permisiunea nu a fost acceptata", Toast.LENGTH_LONG).show();
+                }
+                return;
+            }
+        }
+    }
+     */
 
     private void afisareInventar() {
         String userID = firebaseUser.getUid();
@@ -109,7 +171,7 @@ public class PredareCostum extends AppCompatActivity {
     private void predareCostum(final String scannedCode) {
         String userID = firebaseUser.getUid();
         DatabaseReference pathUser = databaseReference.child("CostumeInchiriate").child(userID);
-        
+
         pathUser.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -173,14 +235,17 @@ public class PredareCostum extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String cod = dataSnapshot.getValue(String.class);
 
-                if(codPrimt.equals(cod)) {
-                    for (String codCostum : codes) {
-                        pathUser.child(codCostum).removeValue();
+                if(checkLocationInArea()) {
+                    if (codPrimt.equals(cod)) {
+                        for (String codCostum : codes) {
+                            pathUser.child(codCostum).removeValue();
+                        }
+                        finish();
+                    } else {
+                        Toast.makeText(PredareCostum.this, "Codul introdus nu este corect!", Toast.LENGTH_LONG).show();
                     }
-                    finish();
-                }
-                else {
-                    Toast.makeText(PredareCostum.this, "Codul introdus nu este corect!", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(PredareCostum.this, "Nu te aflii in zona magaziei", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -189,5 +254,34 @@ public class PredareCostum extends AppCompatActivity {
 
             }
         });
+    }
+
+    private boolean checkLocationInArea() {
+        onLocationChanged(location);
+        if((longitude >= 21.2371000 && longitude <= 21.2373000) && (latitude >= 45.7353900 && latitude <= 45.7355500) //locatie acasa
+            || (longitude >= 21.2259900 && longitude <= 21.2262500) && (latitude >= 45.7474000 && latitude <= 45.7475000)) //locatie facultate
+            return true;
+        return false;
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        longitude = location.getLongitude();
+        latitude = location.getLatitude();
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
     }
 }
